@@ -14,7 +14,7 @@ Para rodar a API localmente, utilize os seguintes comandos:
 
 Ela será disponibilizada na porta 3000. 
 
-Em seguida, rode um terminal no contexto da pasta "bootcamp-cielo", e utilize os seguintes comandos para rodar o projeto:
+Em seguida, rode um terminal dentro da pasta "bootcamp-cielo", e utilize os seguintes comandos para rodar o projeto:
 
 ```bash
   npm install && ng serve

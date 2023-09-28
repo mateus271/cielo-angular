@@ -1,0 +1,68 @@
+<div class="table-page-container">
+    <div class="transaction-table-container">
+        <table class="table" mat-table [dataSource]="transactions">
+            <ng-container matColumnDef="transactionId">
+                <th class="table-head" mat-header-cell *matHeaderCellDef>Id da transação</th>
+                <td class="table-cell" mat-cell *matCellDef="let transaction">{{ transaction.id }}</td>
+            </ng-container>
+              
+            <ng-container matColumnDef="transactionDate">
+              <th class="table-head" mat-header-cell *matHeaderCellDef>Realizado em</th>
+              <td class="table-cell" mat-cell *matCellDef="let transaction">{{ transaction.date | date:'dd/MM/yyyy HH:mm:ss' }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="paymentType">
+              <th class="table-head" mat-header-cell *matHeaderCellDef>Tipo de pagamento</th>
+              <td class="table-cell" mat-cell *matCellDef="let transaction">{{ transaction.paymentType }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="cardBrand">
+              <th class="table-head" mat-header-cell *matHeaderCellDef>Marca do cartão</th>
+              <td class="table-cell" mat-cell *matCellDef="let transaction">{{ transaction.cardBrand }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="grossAmount">
+              <th class="table-head" mat-header-cell *matHeaderCellDef>Valor bruto</th>
+              <td class="table-cell" mat-cell *matCellDef="let transaction"><span>R$ </span>{{ transaction.grossAmount }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="netAmount">
+              <th class="table-head" mat-header-cell *matHeaderCellDef>Valor líquido</th>
+              <td class="table-cell" mat-cell *matCellDef="let transaction"><span>R$ </span>{{ transaction.netAmount }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="administrationFee">
+              <th class="table-head" mat-header-cell *matHeaderCellDef>Taxa administrativa</th>
+              <td class="table-cell" mat-cell *matCellDef="let transaction"><span>R$ </span>{{ transaction.administrationFee }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="channel">
+              <th class="table-head" mat-header-cell *matHeaderCellDef>Canal</th>
+              <td class="table-cell" mat-cell *matCellDef="let transaction">{{ transaction.channel }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="mdrTaxAmount">
+              <th class="table-head" mat-header-cell *matHeaderCellDef>Imposto sobre MDR</th>
+              <td class="table-cell" mat-cell *matCellDef="let transaction"><span>R$ </span>{{ transaction.mdrTaxAmount }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="mdrFeeAmount">
+              <th class="table-head" mat-header-cell *matHeaderCellDef>Taxa MDR</th>
+              <td class="table-cell" mat-cell *matCellDef="let transaction"><span>R$ </span>{{ transaction.mdrFeeAmount }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="transactionStatus">
+              <th class="table-head" mat-header-cell *matHeaderCellDef>Status</th>
+              <td class="table-cell" mat-cell *matCellDef="let transaction">{{ transaction.status }}</td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+        </table>
+    
+        <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+        </mat-paginator> -->
+    </div>
+</div>
