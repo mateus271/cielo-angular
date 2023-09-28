@@ -1,0 +1,27 @@
+.table-page-container {
+    background-color: var(--light-theme-background);
+    width: 100%;
+
+    .transaction-table-container {
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .table {
+            background-color: var(--light-theme-white);
+            box-shadow: 0px 8px 24px 0px rgba(69, 69, 80, 0.10);
+            border-radius: 8px;
+            padding: 20px;
+            width: 95%;
+
+            .table-head {
+                text-align: center;
+            }
+
+            .table-cell {
+                text-align: center;
+            }
+        }
+    }
+}
