@@ -1,4 +1,190 @@
 .main-page-container {
-    background-color: var(--light-theme-background);
+    // background-color: var(--light-theme-background);
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #fafbfc;
+    padding: 40px 0;
+
+    .main-page-info-summary {
+        width: 85%;
+
+        .summary-info-container-card {
+            padding: 20px;
+            border-radius: 15px;
+
+            .summary-info-title {
+                margin: 0 0 20px;
+                font-size: 28px;
+                font-weight: 500;
+                color: #151D48;
+            }
+
+            .summary-info-cards-container {
+                display: flex;
+                justify-content: space-between;
+
+                .summary-info-cards {
+                    width: 180px;
+                    height: 185px;
+                    border-radius: 15px;
+
+                    .summary-info-cards-icons {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 40px;
+                        width: 55px;
+                        height: 55px;
+                        padding: 5px;
+                        border-radius: 99px;
+                        color: white;
+                    }
+
+                    .summary-card-main-p {
+                        margin: 30px 0 15px;
+                        font-size: 25px;
+                        font-weight: bold;
+                        color: #151D48;
+                    }
+
+                    .summary-card-title {
+                        color: #425166;
+                    }
+                }
+            }
+
+            .total-quantity-card{
+                background-color: #FFE2E5;
+
+                .total-quantity-icon {
+                    background-color: #FA5A7D;
+                }
+            }
+
+            .total-amount-card{
+                background-color: #FFF4DE;
+
+                .total-amount-icon {
+                    background-color: #FF947A;
+                }
+            }
+
+            .total-net-amount-card{
+                background-color: #dcfce7;
+
+                .total-net-amount-icon {
+                    background-color: #3cd856;
+                }
+            }
+
+            .total-average-amount-card{
+                background-color: #f3e8ff;
+
+                .total-average-amount-icon {
+                    background-color: #BF83FF
+                }
+            }
+        }
+    }
+}
+
+.table-button {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    width: 100%;
+}
+
+.graphs-container {
+    display: grid;
+    grid-template-columns: 47.5% 47.5%;
+    grid-template-rows: 100%;
+    width: 85%;
+    gap: 5%;
+    height: 100%;
+    
+    .graph-card {
+        padding: 40px;
+        border-radius: 15px;
+        
+        .grap-div-container {
+            width: 100%;
+            height: 100%;
+
+            canvas {
+                width: 100% !important;
+                height: 100% !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .main-page-container {
+        padding: 0;
+        gap: 0;
+
+        .main-page-info-summary {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            box-shadow: none;
+
+            .summary-info-container-card {
+                padding: 20px;
+                border-radius: 0;
+
+                .summary-info-title {
+                    font-size: 3vh;
+                }
+
+                .summary-info-cards-container {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 20px;
+                    
+                    .summary-info-cards {
+                        width: 80%;
+                        display: flex;
+                        height: 20%;
+                        gap: 5vw;
+                        
+                        .summary-info-cards-icons {
+                            width: 35px;
+                            height: 35px;
+                            font-size: 30px;
+                        }
+
+                        .summary-card-main-p {
+                            margin: 0;
+                            font-size: 2.3vh;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .graphs-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .graph-card {
+            width: 93%;
+            padding: 15px;
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+}
+
+@media (orientation: landscape) {
+
 }
