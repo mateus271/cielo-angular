@@ -1,5 +1,13 @@
-<div class="header-container">
-    <!-- <mat-slide-toggle></mat-slide-toggle> -->
-    <div>Dashboard Cartões</div>
-    <div></div>
-</div>
+<mat-toolbar class="header-component">
+    <button mat-button routerLink="/main-page" *ngIf="showBackButton">
+        <mat-icon>
+            <span class="material-symbols-outlined">chevron_left</span>
+        </mat-icon>
+    </button>
+    <div *ngIf="!showBackButton" class="phantom-div"></div>
+    <span class="header-page-title">Dashboard</span>
+    <button *ngIf="!showBackButton" mat-raised-button color="primary" [routerLink]="['/table']">
+        <span *ngIf="!mobile">Navegar para tabela com todos os dados</span>
+        <span *ngIf="mobile">Tabela</span>
+    </button>
+</mat-toolbar>
