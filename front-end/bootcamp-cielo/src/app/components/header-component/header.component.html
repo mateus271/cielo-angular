@@ -1,12 +1,12 @@
 <mat-toolbar class="header-component">
-    <button mat-button routerLink="/main-page" *ngIf="showBackButton">
+    <button mat-button routerLink="/main-page" *ngIf="showBackButton" aria-label="Botão para voltar à página principal, representado por uma seta apontando para a esquerda. Só é exibido quando se está na página da tabela">
         <mat-icon>
             <span class="material-symbols-outlined">chevron_left</span>
         </mat-icon>
     </button>
     <div *ngIf="!showBackButton" class="phantom-div"></div>
-    <span class="header-page-title">Dashboard</span>
-    <button *ngIf="!showBackButton" mat-raised-button color="primary" [routerLink]="['/table']">
+    <span class="header-page-title" aria-label="Nome da aplicação">Dashboard</span>
+    <button *ngIf="!showBackButton" mat-raised-button color="primary" [routerLink]="['/table']" aria-label="Botão para ir à página da tabela com todos os dados da api. Só é exibido na página principal da aplicação">
         <span *ngIf="!mobile">Navegar para tabela com todos os dados</span>
         <span *ngIf="mobile">Tabela</span>
     </button>

@@ -4,6 +4,14 @@
     height: 100% !important;
 }
 
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 @media (max-width: 700px) {
     .chart {
         width: 90vw !important;

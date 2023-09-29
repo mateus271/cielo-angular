@@ -27,8 +27,6 @@ export class TablePage implements OnInit, AfterViewInit {
         "netAmount",
         "administrationFee",
         "channel",
-        // "mdrTaxAmount",
-        // "mdrFeeAmount",
         "status",
     ];
 

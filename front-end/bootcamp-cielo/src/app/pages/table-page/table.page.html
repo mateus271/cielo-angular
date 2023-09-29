@@ -40,16 +40,6 @@
         <td mat-cell class="table-cell" *matCellDef="let transaction">{{ transaction.channel }}</td>
       </ng-container>
       
-      <!-- <ng-container matColumnDef="mdrTaxAmount">
-        <th mat-header-cell class="table-head" *matHeaderCellDef mat-sort-header>Imposto sobre MDR</th>
-        <td mat-cell class="table-cell" *matCellDef="let transaction"><span>R$ </span>{{ transaction.mdrTaxAmount }}</td>
-      </ng-container>
-      
-      <ng-container matColumnDef="mdrFeeAmount">
-        <th mat-header-cell class="table-head" *matHeaderCellDef mat-sort-header>Taxa MDR</th>
-        <td mat-cell class="table-cell" *matCellDef="let transaction"><span>R$ </span>{{ transaction.mdrFeeAmount }}</td>
-      </ng-container> -->
-      
       <ng-container matColumnDef="status">
         <th mat-header-cell class="table-head" *matHeaderCellDef mat-sort-header>Status</th>
         <td mat-cell class="table-cell" *matCellDef="let transaction">{{ transaction.status }}</td>
