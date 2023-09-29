@@ -9,7 +9,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule } from '@angular/common';
 import { MainPageModule } from './pages/main-page/main-page.module';
 import { TablePageModule } from './pages/table-page/table-page.module';
-import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -22,8 +21,7 @@ registerLocaleData(ptBr);
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SideNavComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
