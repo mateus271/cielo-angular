@@ -8,8 +8,8 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/transactions", (req, res) => {
-    const searchText = req.query.search?.toLowerCase();
-    const resultTransactionSearch = data.items.filter(transaction => searchText ? transaction.name.toLowerCase().includes(searchText) : true);
+    // const searchText = req.query.search?.toLowerCase();
+    // const resultTransactionSearch = data.items.filter(transaction => searchText ? transaction.name.toLowerCase().includes(searchText) : true);
 
     // Pagination logic
     // const pageSize = parseInt(req.query.pageSize) || 25;
@@ -18,7 +18,9 @@ app.get("/transactions", (req, res) => {
     // const endIndex = startIndex + pageSize;
     // const paginatedData = resultTransactionSearch.slice(startIndex, endIndex);
 
-    setTimeout(() => res.json(resultTransactionSearch), resultTransactionSearch.length * 25);
+    // setTimeout(() => res.json(resultTransactionSearch), resultTransactionSearch.length * 25);
+    // setTimeout(() => res.json(data.items)); //get only the transactions from the API
+    setTimeout(() => res.json(data));
 });
 
 app.listen(3000, () => {
