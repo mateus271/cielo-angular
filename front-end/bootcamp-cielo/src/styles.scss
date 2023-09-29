@@ -34,25 +34,25 @@ $bootcamp-cielo-theme: mat.define-light-theme((
 @include mat.all-component-themes($bootcamp-cielo-theme);
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    --light-theme-white: #ffffff;
-    --light-theme-main-texts: #5a646e;
-    --light-theme-secondary-texts: #017ceb;
-    --light-theme-background: #e3e8f2;
+  --light-theme-white: #ffffff;
+  --light-theme-main-texts: #5a646e;
+  --light-theme-secondary-texts: #017ceb;
+  --light-theme-background: #e3e8f2;
 
-    --dark-theme-gray: #231f20;
-    --dark-theme-main-texts: #ffffff;
-    --dark-theme-secondary-texts: #e0e566;
-    --dark-theme-card-background: #353a40;
-    --dark-theme-button-texts: #204986;
+  --dark-theme-gray: #231f20;
+  --dark-theme-main-texts: #ffffff;
+  --dark-theme-secondary-texts: #e0e566;
+  --dark-theme-card-background: #353a40;
+  --dark-theme-button-texts: #204986;
 }
 
 body {
-    margin: 0; 
+  margin: 0; 
 }
 
 html, body { height: 100%; }
