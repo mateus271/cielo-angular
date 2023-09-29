@@ -1,27 +1,60 @@
 .table-page-container {
     background-color: var(--light-theme-background);
     width: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .transaction-table-container {
-        padding: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .table {
+        background-color: var(--light-theme-white);
+        box-shadow: 0px 8px 24px 0px rgba(69, 69, 80, 0.10);
+        border-radius: 8px;
+        padding: 20px;
+        width: 95%;
+
+        .table-head {
+            text-align: center;
+            user-select: none;
+
+            ::ng-deep .mat-sort-header-container {
+                justify-content: center;
+            }
+        }
+
+
+        .table-cell {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .table-page-container {
+        display: block;
+        overflow-x: auto;
+        width: auto;
+        padding: 20px;
 
         .table {
-            background-color: var(--light-theme-white);
-            box-shadow: 0px 8px 24px 0px rgba(69, 69, 80, 0.10);
-            border-radius: 8px;
-            padding: 20px;
-            width: 95%;
+            width: 100%;
 
-            .table-head {
-                text-align: center;
+            td.table-cell {
+                padding-right: 25px;
             }
+        }
+    }
+}
 
-            .table-cell {
-                text-align: center;
-            }
+@media (orientation: landscape) {
+    .table-page-container {
+        display: block;
+        overflow-x: auto;
+        width: auto;
+        padding: 20px;
+
+        .table {
+            width: 100%;
         }
     }
 }
