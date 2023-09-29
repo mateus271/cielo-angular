@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { Transaction } from "src/app/interfaces/transaction.interface";
-import { ApiService } from "src/app/services/api.service";
+import { Summary } from "src/app/models/summary.type";
+import { DatePipe } from "@angular/common";
+import { CurrencyPipe } from "@angular/common";
+import { Transaction } from "src/app/models/transaction.type";
+import { TransactionsApiService } from "src/app/services/transactions-api.service";
 
 @Component({
     selector: 'app-main-page',
@@ -11,28 +13,29 @@ import { ApiService } from "src/app/services/api.service";
 })
 
 export class MainPage implements OnInit {
-    public transactions: Transaction[] = [];
-
-    constructor(private apiService: ApiService, private router: Router) {}
+    public summary: Summary;
+    public isSingleDayPeriod: boolean = false; 
+    
+    constructor(private transactionsApiService: TransactionsApiService) {}
 
     ngOnInit(): void {
-        this.getTransactionsFromAPI();
+        this.getTransactionsApiResponse();
+        this.setSummaryInfo();
     }
 
+    private setSummaryInfo(): void {
+        this.transactionsApiService.summary.subscribe({
+            next: (summary: Summary) => {
+                this.summary = summary;
 
-    private getTransactionsFromAPI() {
-        this.apiService.getTransactions().subscribe((data: Transaction[]) => {
-            this.transactions = this.apiService.transactions = data;
-        });
+                if (this.summary.finalDate === this.summary.initialDate) {
+                    this.isSingleDayPeriod = true;
+                }
+            }
+        })
     }
 
-    public redirectToPage(name: string): void {
-        switch(name) {
-            case "table":
-                this.router.navigate(['/table/']);
-                break;
-            default:
-                break;
-        }
+    private getTransactionsApiResponse(): void {
+        this.transactionsApiService.getTransactionsApiResponse();
     }
 }
