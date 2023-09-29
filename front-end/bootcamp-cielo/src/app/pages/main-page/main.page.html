@@ -2,14 +2,14 @@
     <div class="main-page-info-summary" *ngIf="summary">
         <mat-card class="summary-info-container-card">
             <div class="summary-info-title">
-                <p *ngIf="isSingleDayPeriod">Exibindo informações do dia {{ summary.initialDate | date:'dd/MM/yyyy' }}</p>
-                <p *ngIf="!isSingleDayPeriod">Exibindo informações dos dias {{ summary.initialDate | date:'dd/MM/yyyy' }} a {{ summary.finalDate | date:'dd/MM/yyyy' }}</p>
+                <p *ngIf="isSingleDayPeriod" aria-label="Indica o dia em que as transações foram realizadas">Exibindo informações do dia {{ summary.initialDate | date:'dd/MM/yyyy' }}</p>
+                <p *ngIf="!isSingleDayPeriod" aria-label="Indica o período em que as transações foram realizadas">Exibindo informações dos dias {{ summary.initialDate | date:'dd/MM/yyyy' }} a {{ summary.finalDate | date:'dd/MM/yyyy' }}</p>
             </div>
 
             <mat-card-content class="summary-info-cards-container">
                 <mat-card class="summary-info-cards total-quantity-card">
                     <mat-icon class="summary-info-cards-icons total-quantity-icon">
-                        <span class="material-symbols-outlined">receipt_long</span>
+                        <span class="material-symbols-outlined" aria-label="Ícone de uma nota fiscal">receipt_long</span>
                     </mat-icon>
                     <div class="summary-info-card-text-container">
                         <p class="summary-card-main-p">{{ this.summary.totalQuantity }}</p>
@@ -19,7 +19,7 @@
                 
                 <mat-card class="summary-info-cards total-amount-card">
                     <mat-icon class="summary-info-cards-icons total-amount-icon">
-                        <span class="material-symbols-outlined">paid</span>
+                        <span class="material-symbols-outlined" aria-label="Ícone de cifrão, dentro de um círculo">paid</span>
                     </mat-icon>
                     <div class="summary-info-card-text-container">
                         <p class="summary-card-main-p">{{ this.summary.totalAmount | currency: 'BRL' }}</p>
@@ -34,16 +34,14 @@
                         </span>
                     </mat-icon>
                     <div class="summary-info-card-text-container">
-                        <p class="summary-card-main-p">{{ this.summary.totalNetAmount  | currency: 'BRL' }}</p>
+                        <p class="summary-card-main-p" aria-label="Ícone com duas notas de dinheiro, uma sobreposta à outra">{{ this.summary.totalNetAmount  | currency: 'BRL' }}</p>
                         <p class="summary-card-title">Renda líquida total</p>
                     </div>
                 </mat-card>
                 
                 <mat-card class="summary-info-cards total-average-amount-card">
                     <mat-icon class="summary-info-cards-icons total-average-amount-icon">
-                        <span class="material-symbols-outlined">
-                            currency_exchange
-                        </span>
+                        <span class="material-symbols-outlined" aria-label="Ícone de cifrão, dentro de um círculo formado por duas setas, uma acabando onde a outra começa">currency_exchange</span>
                     </mat-icon>
                     <div class="summary-info-card-text-container">
                         <p class="summary-card-main-p">{{ this.summary.totalAverageAmount  | currency: 'BRL' }}</p>
