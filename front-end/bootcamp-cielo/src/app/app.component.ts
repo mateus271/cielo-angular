@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
+  public title = "bootcamp-cielo";
+
   constructor() {}
 
   ngOnInit(): void {}
